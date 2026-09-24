@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ICT Project</title>
+
+    <link rel="stylesheet"
+          href="https://pyscript.net/releases/2026.7.3/core.css">
+
+    <script type="module"
+            src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .sku-button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .sku-button:hover {
+            background-color: #555;
+        }
+
+        #sku_result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script type="py" src="sku.py"></script>
+
+    <div class="container">
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="receipt.html">Receipt</a>
+            <a href="sku.html">SKU Generator</a>
+        </nav>
+
+        <h1>📦 SKU Generator</h1>
+
+        <p class="subtitle">
+            Create a unique product code.
+        </p>
+
+        <label for="category">
+            Product Category
+        </label>
+
+        <input
+            type="text"
+            id="category"
+            placeholder="Example: Burger"
+        >
+
+        <label for="product_name">
+            Product Name
+        </label>
+
+        <input
+            type="text"
+            id="product_name"
+            placeholder="Example: Cheeseburger"
+        >
+
+        <label for="stock_qty">
+            Stock Quantity
+        </label>
+
+        <input
+            type="number"
+            id="stock_qty"
+            placeholder="Example: 25"
+        >
+
+        <button
+            class="sku-button"
+            py-click="generate_sku"
+        >
+            Generate SKU
+        </button>
+
+        <div id="sku_result"></div>
+
+    </div>
+
+</body>
+</html>

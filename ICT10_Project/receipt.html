@@ -1,0 +1,197 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ICT Project</title>
+
+    <link rel="stylesheet"
+          href="https://pyscript.net/releases/2026.7.3/core.css">
+
+    <script type="module"
+            src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .food-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .food-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .food-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .foodname {
+            font-weight: bold;
+        }
+
+        .price {
+            color: #555;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .order-button:hover {
+            background-color: #555;
+        }
+
+        #receipt {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .receipt-title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .receipt-line {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+            border-top: 2px solid #333;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script type="py" src="main.py"></script>
+
+    <div class="container">
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="receipt.html">Receipt</a>
+            <a href="sku.html">SKU Generator</a>
+        </nav>
+
+        <h1>🍔 Burger Shop</h1>
+
+        <p class="subtitle">
+            Choose your favorite food!
+        </p>
+
+        <label class="food-item">
+            <span class="food-info">
+                <input type="checkbox" id="item1">
+                <span class="foodname">Burger</span>
+            </span>
+            <span class="price">₱150</span>
+        </label>
+
+        <label class="food-item">
+            <span class="food-info">
+                <input type="checkbox" id="item2">
+                <span class="foodname">Cheese Burger</span>
+            </span>
+            <span class="price">₱160</span>
+        </label>
+
+        <label class="food-item">
+            <span class="food-info">
+                <input type="checkbox" id="item3">
+                <span class="foodname">Vegan Burger</span>
+            </span>
+            <span class="price">₱180</span>
+        </label>
+
+        <label class="food-item">
+            <span class="food-info">
+                <input type="checkbox" id="item4">
+                <span class="foodname">Burger Supreme</span>
+            </span>
+            <span class="price">₱200</span>
+        </label>
+
+        <label class="food-item">
+            <span class="food-info">
+                <input type="checkbox" id="item5">
+                <span class="foodname">Burger Fries</span>
+            </span>
+            <span class="price">₱130</span>
+        </label>
+
+        <button class="order-button" py-click="create_order">
+            Create Order
+        </button>
+
+        <div id="receipt"></div>
+
+    </div>
+
+</body>
+</html>
